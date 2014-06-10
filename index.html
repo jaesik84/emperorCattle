@@ -50,23 +50,32 @@
 		var mapTypeControl = new daum.maps.MapTypeControl();
 		map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
 
-		// 기본 마커
+		// 만수동 마커
 		var marker = new daum.maps.Marker({
 			position: new daum.maps.LatLng(37.4445589, 126.7409645)
 		});
 		
 		marker.setMap(map);
 		
+		// 금이동 마커
+		var marker = new daum.maps.Marker({
+			position: new daum.maps.LatLng(37.3987922, 126.8345593)
+		});
+		
+		marker.setMap(map);
+		
 	};
-	
-	function panToTwo(){
-		map.panTo(new daum.maps.LatLng(37.3987922, 126.8345593));
-	}
 	
 	// 다음 지도 만수동 중심점 이동
 	function panTo() {
 		map.panTo(new daum.maps.LatLng(37.4445589, 126.7409645));
 	}
+	
+	// 다음 지도 금이동 중심점 이동
+	function panToTwo(){
+		map.panTo(new daum.maps.LatLng(37.3987922, 126.8345593));
+	}
+	
 
 	// 카카오 링크
 	function executeURLLink() {
