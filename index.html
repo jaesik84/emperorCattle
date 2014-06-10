@@ -14,9 +14,8 @@
 		
 		mapInit();
 		executeURLLink();
-		/*
-		setTimeout(function(){	
-		}, 1000);*/
+		
+		$(window).on("load resize orientationchange", mapInit);
 	});
 
 	function mapInit() {
@@ -47,6 +46,7 @@
 		var marker = new daum.maps.Marker({
 			position: new daum.maps.LatLng(37.4445589, 126.7409645)
 		});
+		
 		marker.setMap(map);
 
 	};
