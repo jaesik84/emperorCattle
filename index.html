@@ -20,6 +20,11 @@
 			center: new daum.maps.LatLng(37.537123, 127.005523),
 			level: 3
 		});
+		
+		var marker = new daum.maps.Marker({
+			position: new daum.maps.LatLng(37.537123, 127.005523)
+		});
+		marker.setMap(map);
 	};
 
 	function executeURLLink()
@@ -42,7 +47,7 @@
 <body>
     <h1>황제한우</h1>
     <h2>인천 만수동 황제한우한돈</h2>
-	<div id="map" style="width:600px;height:400px"></div>
+	<div id="map" style="width:100%;height:400px"></div>
 </body>
 
 </html>
