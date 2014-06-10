@@ -3,40 +3,64 @@
 <head>
 
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
-    <meta name="viewport" content="initial-scale=1,minimum-scale=1, maximum-scale=1">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no">
     
     <script type="text/javascript" src="./kakao.link.js"></script>
     <script type="text/javascript" src="./jquery-1.11.1.min.js"></script>
-    
-<script type="text/javascript">
+    <style type="text/css">
+		html { height: 100% }
+		body { height: 100%; margin: 0; padding: 0 }
+		#map { width: 100%; height: 100% }
+	</style>
+	<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=70c0f2fd0ebb06d53d5dcf42474b781fea5e568b">
+	<script type="text/javascript">
 
-$(document).ready(function(){ 
-    executeURLLink();
+	$(document).ready(function(){ 
+		executeURLLink();
 
-});
+	});
 
-function executeURLLink()
-{
-    /* 
-    msg, url, appid, appname은 실제 서비스에서 사용하는 정보로 업데이트되어야 합니다. 
-    */
-    kakao.link("talk").send({
-        msg : "인천 만수동 황제한우한돈\n보기좋은 고기가 맛도 좋지요.",
-        url : "https://www.facebook.com/shs.royalhanwoo?fref=ts",
-        appid : "m.kakao.com",
-        appver : "2.0",
-        appname : "황제한우",
-        type : "link"
-    });
+	window.onload = function() {
+		var position = new daum.maps.LatLng(37.537123, 127.005523);
 
-}
+		var map = new daum.maps.Map(document.getElementById('map'), {
+			center: position,
+			level: 4,
+			mapTypeId: daum.maps.MapTypeId.HYBRID
+		});
 
-</script>
+		var marker = new daum.maps.Marker({
+			position: position
+		});
+		marker.setMap(map);
+
+		var infowindow = new daum.maps.InfoWindow({
+			content: 'Hello, World!'
+		});
+		infowindow.open(map, marker);
+	};
+
+	function executeURLLink()
+	{
+		/* 
+		msg, url, appid, appname은 실제 서비스에서 사용하는 정보로 업데이트되어야 합니다. 
+		*/
+		kakao.link("talk").send({
+			msg : "인천 만수동 황제한우한돈\n보기좋은 고기가 맛도 좋지요.",
+			url : "https://www.facebook.com/shs.royalhanwoo?fref=ts",
+			appid : "http://jaesik84.github.com/emperorCattle/",
+			appver : "2.0",
+			appname : "황제한우",
+			type : "link"
+		});
+
+	}
+	</script>
 </head>
 <body>
     <h1>황제한우</h1>
     <h2>인천 만수동 황제한우한돈</h2>
-    <h3>카카오링크 페이지로 이동중입니다.</h3>
+	<div id="map"></div>
 </body>
 
 </html>
