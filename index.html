@@ -11,8 +11,12 @@
     <script type="text/javascript">
 
 	$(document).ready(function(){ 
-		executeURLLink();
+		
 		mapInit();
+		
+		setTimeout(function(){
+		    executeURLLink();	
+		}, 1000);
 	});
 
 	function mapInit() {
