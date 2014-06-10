@@ -69,9 +69,7 @@
 	// 다음 지도 만수동 중심점 이동
 	function panTo() {
 		map.panTo(new daum.maps.LatLng(37.4445589, 126.7409645));
-		if(map.getLevel() < 5 ){
-			map.setLevel(5);
-		}
+		map.setLevel(5);
 	}
 	
 	// 다음 지도 금이동 중심점 이동
