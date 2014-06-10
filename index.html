@@ -10,11 +10,12 @@
     
 <script type="text/javascript">
 
-$(function(){
-    executeURLLink();
-});
-
 $(document).ready(function(){ 
+    executeURLLink();
+    
+    setTimeout(function(){
+        window.open('','_self').close();
+    }, 1000);
 });
 
 function executeURLLink()
@@ -31,7 +32,6 @@ function executeURLLink()
         type : "link"
     });
 
-    window.open('','_self').close();
 }
 
 </script>
