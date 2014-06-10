@@ -11,11 +11,11 @@
     <script type="text/javascript">
 
 	$(document).ready(function(){ 
-		
+		// 다음 지도
 		mapInit();
+		// 카카오 링크
 		executeURLLink();
 		
-		$(window).on("load resize orientationchange", mapInit);
 	});
 
 	function mapInit() {
@@ -49,6 +49,8 @@
 		
 		marker.setMap(map);
 
+		$(window).on("load resize orientationchange", 
+		map.panTo(new daum.maps.LatLng(37.4445589, 126.7409645)));
 	};
 
 	function executeURLLink()
