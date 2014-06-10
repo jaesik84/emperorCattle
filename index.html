@@ -1,11 +1,18 @@
 <!doctype html>
 <html>
 <head>
+
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="initial-scale=1,minimum-scale=1, maximum-scale=1">
+    
     <script type="text/javascript" src="./kakao.link.js"></script>
+    <script type="text/javascript" src="./jquery-1.11.1.min.js"></script>
+    
 <script type="text/javascript">
-document.open(executeURLLink);
+
+$(function(){
+    executeURLLink();
+});
 
 function executeURLLink()
 {
@@ -26,7 +33,6 @@ function executeURLLink()
 </script>
 </head>
 <body>
-    <div onclick="javascript:executeURLLink()">카카오톡 URL 전달</div>
     <h1>황제한우</h1>
 </body>
 
