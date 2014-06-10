@@ -26,8 +26,8 @@
 
 		rc.getNearestPanoId(p, 50, function(panoid) {
 			rv.setPanoId(panoid);
+			rv.setViewpoint({ pan: 15, tilt: 40, zoom: 2 });
 		});
-
 	};
 
 	function executeURLLink()
