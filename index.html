@@ -5,8 +5,8 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="initial-scale=1.0,user-scalable=no">
     
-    <!--<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>-->
-    <script type="text/javascript" src="./kakao.link.js"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <!--<script type="text/javascript" src="./kakao.link.js"></script>-->
 
     <script type="text/javascript" src="./jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=70c0f2fd0ebb06d53d5dcf42474b781fea5e568b" charset="utf-8"></script> 
@@ -16,7 +16,7 @@
 		// 다음 지도
 		mapInit();
 		// 카카오 링크
-		// executeURLLink();
+	 executeURLLink();
 		
 		//페이지 변환시 만수동 이동
 		//$(window).on("load resize orientationchange", panTo);
@@ -80,6 +80,7 @@
 	// 카카오 링크
 	function executeURLLink() {
 		// msg, url, appid, appname은 실제 서비스에서 사용하는 정보로 업데이트되어야 합니다. 
+		/*
 		kakao.link("talk").send({
 			msg : "황제한우\n보기좋은 고기가 맛도 좋지요.",
 			url : "https://www.facebook.com/shs.royalhanwoo?fref=ts",
@@ -88,8 +89,8 @@
 			appname : "황제한우",
 			type : "link"
 		});
-		
-		/* 
+		*/
+		 
 		Kakao.init('6ddc46757593cbcbb17fdc8ef1e145a1');
 
 		// 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
@@ -107,7 +108,7 @@
 				// 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
 			}
 		});
-		*/
+		
 
 	}
     </script>
