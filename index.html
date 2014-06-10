@@ -13,9 +13,10 @@
 $(document).ready(function(){ 
     executeURLLink();
     
-    setTimeout(function(){
-        window.open('','_self').close();
-    }, 1000000);
+    $(window).bind('beforeunload', function(){
+        return "message";
+    }); 
+
 });
 
 function executeURLLink()
