@@ -36,7 +36,14 @@
 		var map = new daum.maps.Map(document.getElementById('map'), {
 			center: new daum.maps.LatLng(37.4445589, 126.7409645)
 		});
+		
+		// 지도 컨트롤러(옵션)
+		var zoomControl = new daum.maps.ZoomControl();
+		map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+		var mapTypeControl = new daum.maps.MapTypeControl();
+		map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
 
+		// 기본 마커
 		var marker = new daum.maps.Marker({
 			position: new daum.maps.LatLng(37.4445589, 126.7409645)
 		});
