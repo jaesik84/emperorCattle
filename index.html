@@ -69,13 +69,23 @@
 
 		
 		
-		
 		// 금이동 마커
 		var marker2 = new daum.maps.Marker({
 			position: new daum.maps.LatLng(37.3987922, 126.8345593)
 		});
 		
 		marker2.setMap(map);
+		
+		daum.maps.event.addListener(marker2, "click", function() {
+			location.href = "http://place.map.daum.net/12389417";
+		});
+
+		var infowindow2 = new daum.maps.InfoWindow({
+			position: new daum.maps.LatLng(37.4007922, 126.8345593),
+			content: '<p style="margin:7px 12px;font-size:12px">클릭하시면 상세보기가<br />가능합니다.</p>'
+		});
+		infowindow2.open(map);
+
 		
 	};
 	
