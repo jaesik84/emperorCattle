@@ -51,18 +51,23 @@
 		map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
 
 		// 만수동 마커
-		var marker = new daum.maps.Marker({
+		var marker1 = new daum.maps.Marker({
 			position: new daum.maps.LatLng(37.4445589, 126.7409645)
 		});
 		
-		marker.setMap(map);
+		marker1.setMap(map);
+		
+		daum.maps.event.addListener(marker1, "click", function() {
+			location.href = "http://place.map.daum.net/20246854";
+		});
+
 		
 		// 금이동 마커
-		var marker = new daum.maps.Marker({
+		var marker2 = new daum.maps.Marker({
 			position: new daum.maps.LatLng(37.3987922, 126.8345593)
 		});
 		
-		marker.setMap(map);
+		marker2.setMap(map);
 		
 	};
 	
