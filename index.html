@@ -28,7 +28,7 @@ h1,h2,h3,h4,h5,h6,*{color:inherit;font-family:monospace;}
 			// 카카오 링크
 		 	executeURLLink();
 		}else {
-			$("#kakao-link-btn").attr("onclick", "executeKakaoStoryLink()");
+			$("#kakao-link-btn").click(function(){alert("모바일에서만 가능합니다.");});
 		}
 	});
 	
