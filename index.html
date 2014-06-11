@@ -18,12 +18,17 @@ h1,h2,h3,h4,h5,h6,*{color:inherit;font-family:monospace;}
 	$(document).ready(function(){ 
 		// 다음 지도
 		mapInit();
-		// 카카오 링크
-	 	executeURLLink();
 		
 		//페이지 변환시 만수동 이동
 		//$(window).on("load resize orientationchange", panTo);
 		
+		var chkWebMo = navigator.userAgent;
+		if(chkWebMo.indexOf("iPhone") > 0 || chkWebMo.indexOf("iPod") > 0 || chkWebMo.indexOf("Android") > 0 ){
+			// 카카오 링크
+		 	executeURLLink();
+		}else {
+			$("#kakao-link-btn").attr("onclick", "executeKakaoStoryLink()");
+		}
 	});
 	
 	// 다음지도
@@ -105,6 +110,20 @@ h1,h2,h3,h4,h5,h6,*{color:inherit;font-family:monospace;}
 				url: 'https://www.facebook.com/shs.royalhanwoo?fref=ts'
 				// 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
 			}
+		});
+	}
+	
+	function executeKakaoStoryLink() {
+		kakao.link("story").send({   
+			post : "https://www.facebook.com/shs.royalhanwoo?fref=ts",
+			appid : "www.facebook.com",
+			appver : "1.0",
+			appname : "미디어디음",
+			urlinfo : JSON.stringify({
+				title:"[황제한우]", 
+				desc:"", 
+				imageurl:["https://scontent-a.xx.fbcdn.net/hphotos-prn2/t1.0-9/1016619_510962338975389_2130797396_n.jpg"], 
+				type:"article"})
 		});
 	}
     </script>
