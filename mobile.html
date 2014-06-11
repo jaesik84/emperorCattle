@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>황제한우</title>
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.css" />
-	<script src="http://code.jquery.com/jquery-1.5.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 </head>
-
 <body>
-	<div data-role="page" data-theme="d" style="min-height:100%">
+
+	<div data-role="page" id="pageone">
+		<div data-role="panel" id="myPanel"> 
+			<h2>Panel Header</h2>
+			<p>You can close the panel by clicking outside the panel, pressing the Esc key or by swiping.</p>
+		</div> 
+	
 		<div data-role="header">
 			<h1>황제한우</h1>
 		</div>
-		<div data-role="content">
-		<div class="article">
-	            <p><img src="../../_assets/img/bike.jpg" alt="Fixed Gear bike"></p>
-	            <h2>Fixed Gear</h2>
-	            <p>A fixed-gear or fixed-wheel bicycle, commonly known as a fixie, is a bicycle that has a drivetrain with no freewheel mechanism. The freewheel was developed early in the history of bicycle design but the fixed-gear bicycle remained the standard track racing design. More recently the 'fixie' has become a popular alternative among mainly urban cyclists, offering the advantages of simplicity compared with the standard multi-geared bicycle.</p>
-	            <p><small>Source: Wikipedia</small></p>
-	            <p><a href="#right-panel" data-role="button" data-theme="b" data-inline="true" data-mini="true" data-shadow="false">Share</a></p>
-	        </div><!-- /article -->
+		
+		<div data-role="main" class="ui-content">
+			<p>Click on the button below to open the Panel.</p>
+			<a href="#myPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Open Panel</a>
 		</div>
 		
-    
-		<div data-role="footer" data-position="fixed">
-			<h4>footer content</h4>
-		</div>
-	</div>
+		<div data-role="footer">
+			<h1>Page Footer</h1>
+		</div> 
+	</div> 
+
 </body>
 </html>
