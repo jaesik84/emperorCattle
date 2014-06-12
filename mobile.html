@@ -6,6 +6,125 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+	
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=70c0f2fd0ebb06d53d5dcf42474b781fea5e568b" charset="utf-8"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function(){ 
+		// 다음 지도
+		mapInit();
+		
+		//페이지 변환시 만수동 이동
+		//$(window).on("load resize orientationchange", panTo);
+		
+		var chkWebMo = navigator.userAgent;
+		if(chkWebMo.indexOf("iPhone") > 0 || chkWebMo.indexOf("iPod") > 0 || chkWebMo.indexOf("Android") > 0 ){
+			// 카카오 링크
+		 	executeURLLink();
+		}else {
+			$("#kakao-link-btn").click(function(){alert("모바일에서만 가능합니다.");});
+		}
+	});
+	
+	// 다음지도
+	var map;
+	function mapInit() {
+		
+		/* 로드뷰
+		var p = new daum.maps.LatLng(37.4445589, 126.7409645);
+		var rc = new daum.maps.RoadviewClient();
+		var rv = new daum.maps.Roadview(document.getElementById("map"));
+
+		rc.getNearestPanoId(p, 50, function(panoid) {
+			rv.setPanoId(panoid);
+			rv.setViewpoint({ pan: 15, tilt: 40, zoom: 2 });
+		});
+		*/
+		
+		// 기본 맵
+		map = new daum.maps.Map(document.getElementById('map'), {
+			center: new daum.maps.LatLng(37.4445589, 126.7409645),
+			level : 5
+		});
+		
+		// 지도 컨트롤러(옵션)
+		var zoomControl = new daum.maps.ZoomControl();
+		map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+		var mapTypeControl = new daum.maps.MapTypeControl();
+		map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+
+		// 만수동 마커
+		var marker1 = new daum.maps.Marker({
+			position: new daum.maps.LatLng(37.4445589, 126.7409645)
+		});
+		marker1.setMap(map);
+		daum.maps.event.addListener(marker1, "click", function() {
+			location.href = "http://place.map.daum.net/20246854";
+		});
+		
+		
+		// 금이동 마커
+		var marker2 = new daum.maps.Marker({
+			position: new daum.maps.LatLng(37.3987922, 126.8345593)
+		});
+		marker2.setMap(map);
+		daum.maps.event.addListener(marker2, "click", function() {
+			location.href = "http://place.map.daum.net/12389417";
+		});
+		
+	};
+	
+	// 다음 지도 만수동 중심점 이동
+	function panTo() {
+		map.panTo(new daum.maps.LatLng(37.4445589, 126.7409645));
+		map.setLevel(5);
+	}
+	
+	// 다음 지도 금이동 중심점 이동
+	function panToTwo(){
+		map.panTo(new daum.maps.LatLng(37.3987922, 126.8345593));
+		map.setLevel(3);
+	}
+	
+
+	// 카카오 링크
+	function executeURLLink() {
+		Kakao.init('6ddc46757593cbcbb17fdc8ef1e145a1');
+
+		// 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+		Kakao.Link.createTalkLinkButton({
+			container: '#kakao-link-btn',
+			label: '  [황제한우]',
+			image: {
+				src: 'https://scontent-a.xx.fbcdn.net/hphotos-prn2/t1.0-9/1016619_510962338975389_2130797396_n.jpg',
+				width: '800',
+				height: '600'
+			},
+			webButton: {
+				text: '황제한우 페이지 이동',
+				//url: 'https://www.facebook.com/shs.royalhanwoo?fref=ts'
+				url: 'http://jaesik84.github.io/emperorCattle'
+				// 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+			}
+		});
+	}
+	
+	function executeKakaoStoryLink() {
+		kakao.link("story").send({   
+			// post : "https://www.facebook.com/shs.royalhanwoo?fref=ts",
+			post : "http://jaesik84.github.io/emperorCattle/",
+			appid : "www.facebook.com",
+			appver : "1.0",
+			appname : "미디어디음",
+			urlinfo : JSON.stringify({
+				title:"[황제한우]", 
+				desc:"", 
+				imageurl:["https://scontent-a.xx.fbcdn.net/hphotos-prn2/t1.0-9/1016619_510962338975389_2130797396_n.jpg"], 
+				type:"article"})
+		});
+	}
+    </script>	
 </head>
 <body>
 
@@ -42,8 +161,13 @@
 		</div>
 
 		<div data-role="main" class="ui-content">
-			<p>Goodbye!</p>
-			<a href="#mainPage" class="ui-btn">Go to Page One</a>
+			<h3 style="font-family: fantasy;">
+				<a id="kakao-link-btn" href="javascript:panTo();">인천 만수동 위치</a>
+				&nbsp;&nbsp;&nbsp;
+				<a id="kakao-link-btn" href="javascript:panToTwo();">경기 시흥시 위치</a>
+			</h3>
+			지도 아이콘을 클릭하시면 상세보기가 가능합니다.
+			<div id="map" style="width:95%;height:70%;position: absolute"></div>
 		</div>
 
 		<div data-role="footer">
