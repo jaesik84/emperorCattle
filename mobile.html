@@ -12,8 +12,6 @@
 	<script type="text/javascript">
 	
 	$(document).ready(function(){ 
-		// 다음 지도
-		mapInit();
 		
 		//페이지 변환시 만수동 이동
 		//$(window).on("load resize orientationchange", panTo);
@@ -25,6 +23,10 @@
 		}else {
 			$("#kakao-link-btn").click(function(){alert("모바일에서만 가능합니다.");});
 		}
+		
+		
+		// 다음 지도
+		mapInit();
 	});
 	
 	
