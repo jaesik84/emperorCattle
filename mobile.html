@@ -14,9 +14,7 @@
 	$(document).ready(function(){
 		
 		// 다음 지도
-		setTimeout(function(){
-			mapInit();
-		},1000);
+		setTimeout(function(){mapInit();},1000);
 		
 		//페이지 변환시 만수동 이동
 		//$(window).on("load resize orientationchange", panTo);
@@ -142,7 +140,7 @@
 					</li>
 					<li>
 						<a href="#daumMap" class="ui-btn ui-icon-location ui-btn-icon-left"
-						onclick="javascript:$('#map').empty();mapInit();">map</a>
+						onclick="javascript:$('#map').empty();setTimeout(function(){mapInit();},1000);">map</a>
 					</li>
 				</ul>
 			</div>
