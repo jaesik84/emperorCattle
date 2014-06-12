@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="css/jquery.mobile-1.4.2.min.css">
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/jquery.mobile-1.4.2.min.js"></script>
+    	<script src="js/kakao.link.js"></script>
 	
     	<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 	<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=70c0f2fd0ebb06d53d5dcf42474b781fea5e568b" charset="utf-8"></script>
@@ -118,11 +119,11 @@
 			post : "http://jaesik84.github.io/emperorCattle/",
 			appid : "www.facebook.com",
 			appver : "1.0",
-			appname : "미디어디음",
+			appname : "보기좋은 고기가 맛도 좋지요.\n신선한 암소사시미와 차돌박으리!!!!", 
 			urlinfo : JSON.stringify({
 				title:"[황제한우]", 
-				desc:"", 
-				imageurl:["https://scontent-a.xx.fbcdn.net/hphotos-prn2/t1.0-9/1016619_510962338975389_2130797396_n.jpg"], 
+				desc:"보기좋은 고기가 맛도 좋지요.\n신선한 암소사시미와 차돌박으리!!!!", 
+				imageurl:["http://jaesik84.github.io/emperorCattle/images/eventImage001.PNG"], 
 				type:"article"})
 		});
 	}
@@ -149,9 +150,10 @@
 		<div data-role="main" class="ui-content" style="text-align: center;">
 			<p>보기 좋은 고기가 맛도 좋지요</p>
 			<img width="100%" src="https://scontent-a.xx.fbcdn.net/hphotos-prn2/t1.0-9/1016619_510962338975389_2130797396_n.jpg"/>
-			<a href="https://www.facebook.com/shs.royalhanwoo?fref=ts"><img src="images/facebook_btn.png"/></a>
 			<img src="images/emperorCattle.jpg"/>
-	    		<a id="kakao-link-btn" href="javascript:;"><img src="images/katalk_btn.png"/></a>
+			<a href="https://www.facebook.com/shs.royalhanwoo?fref=ts"><img src="images/facebook_btn.png"/></a>
+			<a id="kakao-link-btn" href="javascript:;"><img src="images/katalk_btn.png"/></a>
+	    		<a href="javascript:executeKakaoStoryLink();"><img src="https://raw.githubusercontent.com/kakao/kakaolink-web/master/kakaostory.png"/></a>
 		</div>
 	</div> 
 
