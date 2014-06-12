@@ -29,6 +29,11 @@
 			$("#kakao-link-btn").click(function(){alert("모바일에서만 가능합니다.");});
 		}
 		
+		$("a[name=daumMap]").click(function(){
+			$("#map").empty();
+			mapInit();
+		});
+		
 	});
 	
 	
