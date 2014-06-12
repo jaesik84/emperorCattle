@@ -141,7 +141,8 @@
 						<a href="#mainPage" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
 					</li>
 					<li>
-						<a href="#daumMap" name="daumMap" class="ui-btn ui-icon-location ui-btn-icon-left">map</a>
+						<a href="#daumMap" class="ui-btn ui-icon-location ui-btn-icon-left"
+						onclick="javascript:$('#map').empty();mapInit();">map</a>
 					</li>
 				</ul>
 			</div>
@@ -165,7 +166,7 @@
 						<a href="#mainPage" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
 					</li>
 					<li>
-						<a href="#daumMap" name="daumMap" class="ui-btn ui-icon-location ui-btn-icon-left">map</a>
+						<a href="#daumMap" class="ui-btn ui-icon-location ui-btn-icon-left">map</a>
 					</li>
 				</ul>
 			</div>
@@ -177,13 +178,7 @@
     				<a class="ui-btn" href="javascript:panTo();">만수동</a>
     				<a class="ui-btn" href="javascript:panToTwo();">시흥시</a>
     			</div>
-			<div id="map" style="width:100%;height:380px"></div>
-			<script>
-				$(function(){
-					$("#map").empty();
-					mapInit();		
-				});
-			</script>
+			<div id="map" style="width:100%;height:360px"></div>
 			지도 아이콘을 클릭하시면 상세보기가 가능합니다.
 		</div>
 	</div> 
