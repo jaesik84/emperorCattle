@@ -3,9 +3,9 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>황제한우</title>
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+	<link rel="stylesheet" href="jquery.mobile-1.4.2.min.css">
 	<script src="jquery-1.11.1.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+	<script src="jquery.mobile-1.4.2.min.js"></script>
 	
     	<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 	<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=70c0f2fd0ebb06d53d5dcf42474b781fea5e568b" charset="utf-8"></script>
@@ -14,9 +14,7 @@
 	$(document).ready(function(){
 		
 		// 다음 지도
-		//setTimeout(function(){
-			mapInit();
-		//},1000);
+		setTimeout(function(){mapInit();},1000);
 		
 		//페이지 변환시 만수동 이동
 		//$(window).on("load resize orientationchange", panTo);
@@ -28,7 +26,7 @@
 		}else {
 			$("#kakao-link-btn").click(function(){alert("모바일에서만 가능합니다.");});
 		}
-		
+
 	});
 	
 	
@@ -77,7 +75,7 @@
 		daum.maps.event.addListener(marker2, "click", function() {
 			location.href = "http://place.map.daum.net/12389417";
 		});
-	};
+	}
 	
 	// 다음 지도 만수동 중심점 이동
 	function panTo() {
@@ -137,15 +135,23 @@
 			<h1>황제한우</h1>
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#mainPage">Home</a></li>
-					<li><a href="#daumMap">map</a></li>
+					<li>
+						<a href="#mainPage" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+					</li>
+					<li>
+						<a href="#daumMap" class="ui-btn ui-icon-location ui-btn-icon-left"
+						onclick="javascript:$('#map').empty();setTimeout(function(){mapInit();},1000);">map</a>
+					</li>
 				</ul>
 			</div>
 		</div>
 
-		<div data-role="main" class="ui-content">
-			<p>Welcome!</p>
-			<a href="#daumMap" class="ui-btn">Go to Page Two</a>
+		<div data-role="main" class="ui-content" style="text-align: center;">
+			<p>보기 좋은 고기가 맛도 좋지요</p>
+			<img width="100%" src="https://scontent-a.xx.fbcdn.net/hphotos-prn2/t1.0-9/1016619_510962338975389_2130797396_n.jpg"/>
+			<a href="https://www.facebook.com/shs.royalhanwoo?fref=ts"><img src="facebook_btn.png"/></a>
+			<img src="emperorCattle.jpg"/>
+	    		<a id="kakao-link-btn" href="javascript:;"><img src="katalk_btn.png"/></a>
 		</div>
 	</div> 
 
@@ -154,20 +160,25 @@
 			<h1>황제한우</h1>
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#mainPage">Home</a></li>
-					<li><a href="#daumMap">map</a></li>
+					<li>
+						<a href="#mainPage" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+					</li>
+					<li>
+						<a href="#daumMap" class="ui-btn ui-icon-location ui-btn-icon-left">map</a>
+					</li>
 				</ul>
 			</div>
 		</div>
 
 		<div data-role="main" class="ui-content">
-			<h3 style="font-family: fantasy;">
-				<a href="javascript:panTo();">인천 만수동 위치</a>
-				&nbsp;&nbsp;&nbsp;
-				<a href="javascript:panToTwo();">경기 시흥시 위치</a>
-			</h3>
+		
+			<div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
+    				<a class="ui-btn" href="javascript:panTo();">만수동</a>
+    				<a class="ui-btn" href="javascript:panToTwo();">시흥시</a>
+    				<a class="ui-btn" href="javascript:executeKakaoStoryLink();">시흥시</a>
+    			</div>
+			<div id="map" style="width:100%;height:360px"></div>
 			지도 아이콘을 클릭하시면 상세보기가 가능합니다.
-			<div id="map" style="width:100%;height:400px"></div>
 		</div>
 	</div> 
 
