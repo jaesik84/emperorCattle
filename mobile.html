@@ -51,30 +51,6 @@
 			level : 5
 		});
 		
-		// 지도 컨트롤러(옵션)
-		var zoomControl = new daum.maps.ZoomControl();
-		map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
-		var mapTypeControl = new daum.maps.MapTypeControl();
-		map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
-	
-		// 만수동 마커
-		var marker1 = new daum.maps.Marker({
-			position: new daum.maps.LatLng(37.4445589, 126.7409645)
-		});
-		marker1.setMap(map);
-		daum.maps.event.addListener(marker1, "click", function() {
-			location.href = "http://place.map.daum.net/20246854";
-		});
-		
-		
-		// 금이동 마커
-		var marker2 = new daum.maps.Marker({
-			position: new daum.maps.LatLng(37.3987922, 126.8345593)
-		});
-		marker2.setMap(map);
-		daum.maps.event.addListener(marker2, "click", function() {
-			location.href = "http://place.map.daum.net/12389417";
-		});
 		
 	};
 	
