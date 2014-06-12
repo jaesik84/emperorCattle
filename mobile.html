@@ -10,10 +10,6 @@
     	<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 	<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=70c0f2fd0ebb06d53d5dcf42474b781fea5e568b" charset="utf-8"></script>
 	<script type="text/javascript">
-
-	
-	// 다음지도
-	var map;
 	
 	$(document).ready(function(){ 
 		// 다음 지도
@@ -31,6 +27,9 @@
 		}
 	});
 	
+	
+	// 다음지도
+	var map;
 	function mapInit() {
 		
 		/* 로드뷰
@@ -44,7 +43,36 @@
 		});
 		*/
 		
+		// 기본 맵
+		map = new daum.maps.Map(document.getElementById('map'), {
+			center: new daum.maps.LatLng(37.4445589, 126.7409645),
+			level : 5
+		});
 		
+		// 지도 컨트롤러(옵션)
+		var zoomControl = new daum.maps.ZoomControl();
+		map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+		var mapTypeControl = new daum.maps.MapTypeControl();
+		map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
+	
+		// 만수동 마커
+		var marker1 = new daum.maps.Marker({
+			position: new daum.maps.LatLng(37.4445589, 126.7409645)
+		});
+		marker1.setMap(map);
+		daum.maps.event.addListener(marker1, "click", function() {
+			location.href = "http://place.map.daum.net/20246854";
+		});
+		
+		
+		// 금이동 마커
+		var marker2 = new daum.maps.Marker({
+			position: new daum.maps.LatLng(37.3987922, 126.8345593)
+		});
+		marker2.setMap(map);
+		daum.maps.event.addListener(marker2, "click", function() {
+			location.href = "http://place.map.daum.net/12389417";
+		});
 		
 	};
 	
@@ -141,41 +169,6 @@
 			</h3>
 			지도 아이콘을 클릭하시면 상세보기가 가능합니다.
 			<div id="map" style="width: 300px; height: 300px"></div>
-			<script type="text/javascript">
-			//<![CDATA[
-				// 기본 맵
-				map = new daum.maps.Map(document.getElementById('map'), {
-					center: new daum.maps.LatLng(37.4445589, 126.7409645),
-					level : 5
-				});
-				
-				// 지도 컨트롤러(옵션)
-				var zoomControl = new daum.maps.ZoomControl();
-				map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
-				var mapTypeControl = new daum.maps.MapTypeControl();
-				map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
-		
-				// 만수동 마커
-				var marker1 = new daum.maps.Marker({
-					position: new daum.maps.LatLng(37.4445589, 126.7409645)
-				});
-				marker1.setMap(map);
-				daum.maps.event.addListener(marker1, "click", function() {
-					location.href = "http://place.map.daum.net/20246854";
-				});
-				
-				
-				// 금이동 마커
-				var marker2 = new daum.maps.Marker({
-					position: new daum.maps.LatLng(37.3987922, 126.8345593)
-				});
-				marker2.setMap(map);
-				daum.maps.event.addListener(marker2, "click", function() {
-					location.href = "http://place.map.daum.net/12389417";
-				});
-			//]]>
-			</script>
-
 		</div>
 
 		<div data-role="footer">
