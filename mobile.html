@@ -13,6 +13,11 @@
 	
 	$(document).ready(function(){ 
 		
+		// 다음 지도
+		//setTimeout(function(){
+			mapInit();
+		//},1000);
+		
 		//페이지 변환시 만수동 이동
 		//$(window).on("load resize orientationchange", panTo);
 		
@@ -24,10 +29,6 @@
 			$("#kakao-link-btn").click(function(){alert("모바일에서만 가능합니다.");});
 		}
 		
-		// 다음 지도
-		//setTimeout(function(){
-			mapInit();
-		//},1000);
 	});
 	
 	
@@ -146,10 +147,6 @@
 			<p>Welcome!</p>
 			<a href="#daumMap" class="ui-btn">Go to Page Two</a>
 		</div>
-
-		<div data-role="footer">
-			<h1>Footer Text</h1>
-		</div>
 	</div> 
 
 	<div data-role="page" id="daumMap">
@@ -170,7 +167,7 @@
 				<a href="javascript:panToTwo();">경기 시흥시 위치</a>
 			</h3>
 			지도 아이콘을 클릭하시면 상세보기가 가능합니다.
-			<div id="map" style="width: 100px; height: 100px"></div>
+			<div id="map"></div>
 		</div>
 	</div> 
 
