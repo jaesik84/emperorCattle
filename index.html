@@ -17,9 +17,7 @@
 		// 다음 지도
 		setTimeout(function(){mapInit();},1000);
 		
-		//페이지 변환시 만수동 이동
-		//$(window).on("load resize orientationchange", panTo);
-		
+		// PC & Mobile 체크 카카오 링크 클릭시 PC면 경고창		
 		var chkWebMo = navigator.userAgent;
 		if(chkWebMo.indexOf("iPhone") > 0 || chkWebMo.indexOf("iPod") > 0 || chkWebMo.indexOf("Android") > 0 ){
 			// 카카오 링크
@@ -113,6 +111,7 @@
 		});
 	}
 	
+	// 카카오 스토리
 	function executeKakaoStoryLink() {
 		kakao.link("story").send({   
 			// post : "https://www.facebook.com/shs.royalhanwoo?fref=ts",
