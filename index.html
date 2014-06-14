@@ -12,6 +12,15 @@
 	<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=70c0f2fd0ebb06d53d5dcf42474b781fea5e568b" charset="utf-8"></script>
 	<script type="text/javascript">
 	
+	
+	$(document).load(function(){
+		console.log("00");
+	});
+	
+	$(window).load(function(){
+		console.log("11");
+	});
+	
 	$(document).ready(function(){
 		
 		// 다음 지도
@@ -26,10 +35,12 @@
 			$("#kakao-link-btn").click(function(){alert("모바일에서만 가능합니다.");});
 		}
 		
+		console.log("0");
 		if ( $("#mainDiv .fb-post").height() > 100) {
+			console.log("1");
 			$("#faceBookLoad").hide();
 		}
-
+		console.log("2");
 	});
 	
 	
