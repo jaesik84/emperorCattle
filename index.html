@@ -12,13 +12,7 @@
 	<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=70c0f2fd0ebb06d53d5dcf42474b781fea5e568b" charset="utf-8"></script>
 	<script type="text/javascript">
 	
-	$(window).load(function(){
-		
-	});
-	
-	
 	$(document).ready(function(){
-		$("#faceBookLoad").hide();
 		
 		// 다음 지도
 		setTimeout(function(){mapInit();},1000);
@@ -31,6 +25,12 @@
 		}else {
 			$("#kakao-link-btn").click(function(){alert("모바일에서만 가능합니다.");});
 		}
+		
+		$("#mainDiv .fb-post").load(function() {
+			if ( $( this ).height() > 100) {
+				$("#faceBookLoad").hide();
+			}
+		});
 
 	});
 	
@@ -152,7 +152,7 @@
 			</div>
 		</div>
 
-		<div data-role="main" class="ui-content" style="text-align: center;">
+		<div id="mainDiv" data-role="main" class="ui-content" style="text-align: center;">
 			<a href="https://www.facebook.com/shs.royalhanwoo?fref=ts"><img src="images/facebook_btn.png"/></a>
 			<img src="images/emperorCattle.jpg"/>
 			<a id="kakao-link-btn" href="javascript:;"><img src="images/katalk_btn.png"/></a>
@@ -168,8 +168,9 @@
 			<!-- =============================================================================== -->			
 			<!-- =============================================================================== -->			
 			<!-- =============================================================================== -->			
-			<!-- =============================================================================== -->			
+			<!-- =============================================================================== -->
 			
+			<img id="faceBookLoad" src="http://jaesik84.github.io/emperorCattle/css/images/ajax_loader.gif"/>
 		</div>
 	</div> 
 
