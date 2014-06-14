@@ -26,11 +26,9 @@
 			$("#kakao-link-btn").click(function(){alert("모바일에서만 가능합니다.");});
 		}
 		
-		$("#mainDiv .fb-post").load(function() {
-			if ( $( this ).height() > 100) {
-				$("#faceBookLoad").hide();
-			}
-		});
+		if ( $("#mainDiv .fb-post").height() > 100) {
+			$("#faceBookLoad").hide();
+		}
 
 	});
 	
