@@ -11,7 +11,7 @@
     	<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 	<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=70c0f2fd0ebb06d53d5dcf42474b781fea5e568b" charset="utf-8"></script>
 	<script type="text/javascript">
-	
+	var intervalID = null;
 	$(document).ready(function(){
 		
 		// 다음 지도
@@ -26,6 +26,13 @@
 			$("#kakao-link-btn").click(function(){alert("모바일에서만 가능합니다.");});
 		}
 		
+		intervalID = setInterval(function () {
+			console.log("a");
+			if($("#mainDiv").height() > 100){
+				$("#faceBookLoad").hide();
+				clearInterval(intervalID);
+			}
+		}, 1000 ) ;
 	});
 	
 	
@@ -157,13 +164,14 @@
 			<!-- =============================================================================== -->			
 			<!-- =============================================================================== -->			
 			<div id="fb-root"></div> 
-			<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/ko_KR/all.js#xfbml=1"; fjs.parentNode.insertBefore(js, fjs); $("#faceBookLoad").hide(); }(document, 'script', 'facebook-jssdk'));</script>
+			<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/ko_KR/all.js#xfbml=1"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
 			<div class="fb-post" data-href="https://www.facebook.com/shs.royalhanwoo/posts/197475153786414" data-width="466"><div class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/shs.royalhanwoo">황제한우</a>님의 <a href="https://www.facebook.com/shs.royalhanwoo/posts/197475153786414">글</a></div></div>
 			<!-- =============================================================================== -->			
 			<!-- =============================================================================== -->			
 			<!-- =============================================================================== -->			
 			<!-- =============================================================================== -->
 			
+			<img id="faceBookLoad" src="http://jaesik84.github.io/emperorCattle/css/images/ajax-loader.gif"/>
 		</div>
 	</div> 
 
