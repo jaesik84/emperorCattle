@@ -62,10 +62,21 @@
 		map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
 		var mapTypeControl = new daum.maps.MapTypeControl();
 		map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);
-	
+		
+   		// 지도 아이콘 이미지 셋팅
+   		var icon = new daum.maps.MarkerImage(
+			'http://jaesik84.github.io/emperorCattle/images/emperorCattleIcon.png',
+			new daum.maps.Size(31, 34),
+			new daum.maps.Point(16,34),
+			"poly",
+			"1,20,1,9,5,2,10,0,21,0,27,3,30,9,30,20,17,33,14,33"
+		);
+
+
 		// 만수동 마커
 		var marker1 = new daum.maps.Marker({
-			position: new daum.maps.LatLng(37.4445589, 126.7409645)
+			position: new daum.maps.LatLng(37.4445589, 126.7409645),
+			image: icon
 		});
 		marker1.setMap(map);
 		daum.maps.event.addListener(marker1, "click", function() {
@@ -75,7 +86,8 @@
 		
 		// 금이동 마커
 		var marker2 = new daum.maps.Marker({
-			position: new daum.maps.LatLng(37.3987922, 126.8345593)
+			position: new daum.maps.LatLng(37.3987922, 126.8345593),
+			image: icon
 		});
 		marker2.setMap(map);
 		daum.maps.event.addListener(marker2, "click", function() {
@@ -139,7 +151,7 @@
 
 	<div data-role="page" id="mainPage">
 		<div data-role="header">
-			<h1>황제한우</h1>
+			<h1><img src="images/emperorCattleTitle.png"/></h1>
 			<div data-role="navbar">
 				<ul>
 					<li>
@@ -177,7 +189,7 @@
 
 	<div data-role="page" id="daumMap">
 		<div data-role="header">
-			<h1>황제한우</h1>
+			<h1><img src="images/emperorCattleTitle.png"/></h1>
 			<div data-role="navbar">
 				<ul>
 					<li>
