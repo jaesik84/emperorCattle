@@ -34,13 +34,6 @@
 			}
 		}, 1000 ) ;
 		
-		Kakao.API.request({ 
-			url : '/v1/api/story/mystories',
-			success : function(res){
-				alert(JSON.stringify(res));
-			}
-		});
-		
 		Kakao.init('6ddc46757593cbcbb17fdc8ef1e145a1');
 		// 카카오 로그인 버튼을 생성합니다.
 		Kakao.Auth.createLoginButton({
