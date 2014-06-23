@@ -26,8 +26,7 @@
 			$("#kakao-link-btn").click(function(){alert("모바일에서만 가능합니다.");});
 		}
 		
-		Kakao.init('42152ab90c877e90817e11774e827a89');
-		// 카카오 로그인 버튼을 생성합니다.
+		Kakao.init('6ddc46757593cbcbb17fdc8ef1e145a1');
 		Kakao.Auth.login({
 			success: function(authObj) {
 				Kakao.API.request({ url:'/v1/api/story/mystories',
