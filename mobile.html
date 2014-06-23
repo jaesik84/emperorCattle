@@ -33,6 +33,13 @@
 				clearInterval(intervalID);
 			}
 		}, 1000 ) ;
+		
+		Kakao.API.request({ 
+			url : '/v1/api/story/mystories',
+			success : function(res){
+				alert(JSON.stringify(res));
+			}
+		});
 	});
 	
 	
